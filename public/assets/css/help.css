@@ -1,141 +1,187 @@
 /* ===== Global Styles ===== */
 .help-container {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #2c3e50;
-    background: #f7f9fc;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  max-width: 1040px;
+  margin: 40px auto;
+  padding: 30px 36px;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color: #1f2d3d;
+  background: linear-gradient(180deg, #ffffff, #f4f7fb);
+  border-radius: 18px;
+  box-shadow:
+    0 12px 30px rgba(52, 152, 219, 0.12),
+    0 4px 12px rgba(0,0,0,0.05);
 }
 
 /* ===== Search Bar ===== */
 .search-bar {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 25px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: all 0.2s;
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 32px;
+  border: 1px solid #dcdde1;
+  border-radius: 12px;
+  font-size: 15px;
+  background: #ffffff;
+  transition: all 0.25s ease;
+}
+
+.search-bar::placeholder {
+  color: #95a5a6;
+}
+
+.search-bar:hover {
+  border-color: #3498db;
 }
 
 .search-bar:focus {
-    border-color: #3498db;
-    outline: none;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.15);
 }
 
 /* ===== Categories ===== */
 .category {
-    margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .category h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-    font-size: 1.4rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #2c3e50;
+  padding-bottom: 10px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid rgba(52, 152, 219, 0.35);
 }
 
 /* ===== FAQ Items ===== */
 .faq-item {
-    margin: 15px 0;
-    cursor: pointer;
-    padding: 12px 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    background: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-    transition: all 0.2s;
+  margin: 18px 0;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #ecf0f1;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.faq-item strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.faq-item p {
+  font-size: 0.9rem;
+  color: #5f6c7b;
 }
 
 .faq-item:hover {
-    background: #f0f5ff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #f0f5ff, #ffffff);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 /* ===== Resource Grid ===== */
 .resource-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
 }
 
+/* ===== Resource Cards ===== */
 .resource-card {
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    text-align: center;
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
+  padding: 26px 22px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #ecf0f1;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .resource-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
 }
 
 .resource-card h3 {
-    margin: 10px 0;
-    font-size: 1.1rem;
-    color: #34495e;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2c3e50;
 }
 
 .resource-card p {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 18px;
 }
 
 /* ===== Buttons & Links ===== */
-button, a {
-    padding: 10px 20px;
-    background: #3498db;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.2s, transform 0.2s;
+button,
+a {
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 14px rgba(52, 152, 219, 0.35);
 }
 
-button:hover, a:hover {
-    background: #2980b9;
-    transform: translateY(-2px);
+button:hover,
+a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(52, 152, 219, 0.45);
+}
+
+button:active,
+a:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.35);
 }
 
 /* ===== Forms ===== */
 form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-form input, form textarea {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: border-color 0.2s, box-shadow 0.2s;
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #dcdde1;
+  font-size: 14px;
+  transition: all 0.25s ease;
 }
 
-form input:focus, form textarea:focus {
-    border-color: #3498db;
-    outline: none;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+form input:hover,
+form textarea:hover {
+  border-color: #3498db;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.15);
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-    .resource-grid {
-        grid-template-columns: 1fr;
-    }
+  .help-container {
+    padding: 24px;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
 }
