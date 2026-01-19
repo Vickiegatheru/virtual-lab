@@ -1,95 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Electronics Virtual Lab</title>
-
-  <!-- Shared styles -->
-  <link rel="stylesheet" href="/assets/css/main.css">
-
-  <!-- External libraries -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-  <!-- App logic -->
-  <script defer src="/assets/js/app.js"></script>
-</head>
-
-<body>
-  <!-- Top Navigation -->
-  <header class="menu-bar" role="banner">
-    <div class="menu-bar-left">
-      <span class="menu-title">Digital Electronics Virtual Lab</span>
+<div class="main-layout">
+  <!-- Toolbar -->
+  <div class="toolbar" role="toolbar">
+    <div class="toolbar-section">
+      <h4>Menu</h4>
+      <button id="new-file-btn" class="component-button">New File</button>
+      <button id="delete-mode-btn" class="component-button">Delete Mode: OFF</button>
+      <button id="undo-btn" class="component-button">Undo</button>
     </div>
 
-    <nav class="menu-bar-right" role="navigation" aria-label="Main navigation">
-      <ul>
-        <li><a href="/" aria-current="page">Dashboard</a></li>
-        <li><a href="/settings">Settings</a></li>
-        <li><a href="/help">Help</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="main-layout">
-    <!-- Sidebar -->
-    <aside class="sidebar" role="complementary">
-      <h3>Menu</h3>
-
-      <div class="button-group">
-        <button id="new-file-btn" class="component-button">New File</button>
-        <button id="delete-mode-btn" class="component-button">Delete Mode: OFF</button>
-        <button id="undo-btn" class="component-button">Undo</button>
-      </div>
-
+    <div class="toolbar-section">
       <h4>Tools</h4>
-      <div class="button-group">
-        <button id="save-pdf-btn" class="component-button">Save as PDF</button>
-        <button id="simulate-btn" class="component-button">Simulation Mode: OFF</button>
-      </div>
-
-      <h4>I/O Components</h4>
-      <div class="button-group">
-        <button class="component-button spawn-input" data-type="input">Input Switch</button>
-        <button class="component-button spawn-input" data-type="clock">Clock</button>
-        <button class="component-button spawn-output" data-type="led">Output LED</button>
-      </div>
-
-      <h4>Logic Gates</h4>
-      <div class="button-group">
-        <button class="component-button spawn-gate" data-gate="AND">AND</button>
-        <button class="component-button spawn-gate" data-gate="OR">OR</button>
-        <button class="component-button spawn-gate" data-gate="NOT">NOT</button>
-        <button class="component-button spawn-gate" data-gate="NAND">NAND</button>
-        <button class="component-button spawn-gate" data-gate="NOR">NOR</button>
-        <button class="component-button spawn-gate" data-gate="XOR">XOR</button>
-        <button class="component-button spawn-gate" data-gate="XNOR">XNOR</button>
-      </div>
-
-      <input type="file" id="load-input" accept=".json" hidden />
-    </aside>
-
-    <!-- Main Content -->
-    <main class="content" role="main">
-      <section class="workspace">
-        <h2>Workspace</h2>
-
-        <div class="canvas" aria-label="Circuit workspace">
-          <svg id="wiring-layer" class="wiring-layer"></svg>
-          <div id="info-panel" class="info-panel" aria-live="polite"></div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <!-- Truth Table Modal -->
-  <div id="truth-table-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="truth-table-title">
-    <div class="modal-content">
-      <button id="close-modal-btn" class="close-button" aria-label="Close truth table">&times;</button>
-      <h3 id="truth-table-title">Truth Table</h3>
-      <div id="truth-table-container"></div>
+      <button id="save-pdf-btn" class="component-button">Save as PDF</button>
+      <button id="simulate-btn" class="component-button">Simulation Mode: OFF</button>
     </div>
+
+    <div class="toolbar-section">
+      <h4>I/O</h4>
+      <button class="component-button spawn-input" data-type="input">Input</button>
+      <button class="component-button spawn-input" data-type="clock">Clock</button>
+      <button class="component-button spawn-output" data-type="led">LED</button>
+    </div>
+
+    <div class="toolbar-section">
+      <h4>Gates</h4>
+      <button class="component-button spawn-gate" data-gate="AND">AND</button>
+      <button class="component-button spawn-gate" data-gate="OR">OR</button>
+      <button class="component-button spawn-gate" data-gate="NOT">NOT</button>
+      <button class="component-button spawn-gate" data-gate="NAND">NAND</button>
+      <button class="component-button spawn-gate" data-gate="NOR">NOR</button>
+      <button class="component-button spawn-gate" data-gate="XOR">XOR</button>
+      <button class="component-button spawn-gate" data-gate="XNOR">XNOR</button>
+    </div>
+
+    <input type="file" id="load-input" accept=".json" hidden />
   </div>
-</body>
-</html>
+
+  <!-- Workspace -->
+  <main class="content" role="main">
+    <section class="workspace">
+      <h2>Workspace</h2>
+      <div class="canvas" aria-label="Circuit workspace">
+        <svg id="wiring-layer" class="wiring-layer"></svg>
+        <div id="info-panel" class="info-panel" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+</div>

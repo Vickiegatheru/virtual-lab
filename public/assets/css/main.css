@@ -4,6 +4,9 @@ body {
   font-family: 'IBM Plex Sans', 'Roboto Mono', sans-serif;
   background: linear-gradient(135deg, #eaf1f8, #cfd9df);
   color: #1b2735;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===== Top Menu Bar ===== */
@@ -15,46 +18,95 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  z-index: 100;
 }
 
-.menu-title {
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 0.5px;
-}
-
-/* ===== Sidebar ===== */
-.sidebar {
-  width: 240px;
-  background: linear-gradient(180deg, #3a6073, #16222a);
-  padding: 25px;
+.menu-bar-right ul {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  color: white;
-  border-radius: 0 15px 15px 0;
-  box-shadow: 2px 0 12px rgba(0,0,0,0.25);
+  gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 
+.menu-bar-right ul li a {
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.menu-bar-right ul li a:hover,
+.menu-bar-right ul li a[aria-current="page"] {
+  background: #1abc9c;
+  box-shadow: 0 4px 10px rgba(26, 188, 156, 0.4);
+}
+
+/* ===== Toolbar (Horizontal) ===== */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  background: linear-gradient(90deg, #3a6073, #16222a);
+  color: white;
+  padding: 12px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border-bottom: 2px solid rgba(93,173,226,0.25);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.toolbar-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toolbar-section h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #d5d8dc;
+  letter-spacing: 0.4px;
+}
+
+/* ===== Buttons ===== */
 .component-button {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
+  padding: 8px 14px;
   border: none;
-  cursor: pointer;
   background: linear-gradient(135deg, #3498db, #2471a3);
   color: white;
   font-weight: 600;
-  border-radius: 10px;
-  transition: all 0.25s;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: all 0.25s ease;
 }
 
 .component-button:hover {
   background: linear-gradient(135deg, #2e86c1, #1f618d);
   transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(93,173,226,0.4);
 }
 
-/* ===== Canvas ===== */
+/* ===== Main Layout ===== */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ===== Workspace ===== */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow: hidden;
+}
+
 .canvas {
   position: relative;
   width: 100%;
@@ -63,7 +115,8 @@ body {
   border: 2px dashed #5dade2;
   border-radius: 15px;
   box-shadow: inset 0 0 15px rgba(93,173,226,0.2);
-  transition: all 0.3s;
+  margin-top: 20px;
+  transition: all 0.3s ease;
 }
 
 /* ===== Components ===== */
@@ -109,40 +162,6 @@ body {
 .connector:hover {
   background: #48c9b0;
   transform: scale(1.2);
-}
-
-/* ===== LED Indicator ===== */
-.led-indicator {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-bottom: 6px;
-  background-color: #99a3a4;
-  transition: all 0.3s ease;
-}
-
-.led-indicator.on {
-  background-color: #2ecc71;
-  box-shadow: 0 0 8px #2ecc71;
-}
-
-.led-indicator.off {
-  background-color: #e74c3c;
-  box-shadow: 0 0 8px #e74c3c;
-}
-
-/* ===== Wires ===== */
-.wire {
-  stroke: #5dade2;
-  stroke-width: 3;
-  fill: none;
-  transition: all 0.25s ease;
-}
-
-.wire:hover {
-  stroke: #48c9b0;
-  stroke-width: 4;
-  cursor: pointer;
 }
 
 /* ===== Info Panel ===== */
