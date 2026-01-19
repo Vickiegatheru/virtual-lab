@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Lab Help</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/help.css">
+</head>
+<body>
+    <div class="help-container">
+        <input type="text" placeholder="Search help articles..." class="search-bar">
+
+        <div class="category">
+            <h2>Getting Started</h2>
+            <div class="faq-item">
+                <strong>How do I design my first circuit?</strong>
+                <p>1. Drag components from the library. 2. Connect pins. 3. Click "Simulate".</p>
+            </div>
+            <div class="faq-item">
+                <strong>How to share a project?</strong>
+                <p>Click the "Share" button and invite collaborators via email.</p>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Video Tutorials</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>Basic Logic Gates</h3>
+                    <p>Watch on YouTube</p>
+                    <button onclick="playVideo('gate-tutorial')">Play</button>
+                </div>
+                <div class="resource-card">
+                    <h3>Using SPICE Simulations</h3>
+                    <p>Watch on YouTube</p>
+                    <button onclick="playVideo('spice-tutorial')">Play</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community -->
+        <div class="category">
+            <h2>Community Support</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>Forums</h3>
+                    <p>Join discussions with other users.</p>
+                    <a href="#">Visit Forum</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Sample Projects</h3>
+                    <p>Download templates (e.g., Arduino LED).</p>
+                    <button onclick="downloadTemplate()">Download</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Support -->
+        <div class="category">
+            <h2>Still Need Help?</h2>
+            <form>
+                <label>Email: <input type="email" placeholder="your@email.com"></label><br>
+                <label>Message: <textarea rows="4"></textarea></label><br>
+                <button type="submit">Send to Support Team</button>
+            </form>
+        </div>
+    </div>
+    <script src="help.js"></script>
+</body>
+</html>
