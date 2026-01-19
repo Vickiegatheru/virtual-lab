@@ -28,17 +28,32 @@ The Virtual Digital Electronics Lab is a **web-based interactive application** t
 ## File Structure
 
 ```
-virtual-lab/
-├── assets/
-│   ├── css/
-│   │   └── main.css
-│   └── js/
-│       └── app.js
-├── index.html        # Main dashboard
-├── settings.html     # Settings page
-├── help.html         # Help page
-├── login.html        # Login page
-└── README.md         # Project documentation
+/virtual-lab
+│
+├── public/                     # Netlify publish directory
+│   ├── index.html               # Home (workspace)
+│   ├── login.html
+│   ├── settings.html
+│   ├── help.html
+│   │
+│   ├── assets/
+│   │   ├── css/
+│   │   │   ├── main.css         # merged Stylesheet + shared styles
+│   │   │   ├── help.css
+│   │   │   └── settings.css
+│   │   │
+│   │   ├── js/
+│   │   │   ├── app.js           # main workspace JS (JavaScript.js)
+│   │   │   ├── help.js
+│   │   │   ├── settings.js
+│   │   │   └── auth.js          # login logic
+│   │   │
+│   │   └── images/
+│   │
+│   └── _redirects               # Netlify routing
+│
+├── README.md
+
 ```
 
 ---
