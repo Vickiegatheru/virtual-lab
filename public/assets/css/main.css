@@ -4,10 +4,11 @@ body {
   font-family: 'IBM Plex Sans', 'Roboto Mono', sans-serif;
   background: linear-gradient(135deg, #eaf1f8, #cfd9df);
   color: #1b2735;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  /* allow the whole page to scroll */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* ===== Top Menu Bar ===== */
@@ -104,7 +105,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   border-bottom: 2px solid rgba(93,173,226,0.25);
   position: sticky;
-  top: 25px;
+  top: 60px; /* below menu-bar */
   z-index: 99;
 }
 
@@ -145,30 +146,30 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  overflow: auto;
+  /* let the whole page scroll naturally */
 }
 
 /* ===== Workspace ===== */
 .content {
   flex: 1;
   padding: 20px;
-  overflow: auto;
   scroll-behavior: smooth;
+  /* remove inner scroll so page scrolls */
 }
 
 /* ===== Canvas ===== */
 .canvas {
   position: relative;
-  min-width: 1200px; /* enables horizontal scroll */
-  min-height: 800px; /* enables vertical scroll */
+  min-width: 1200px; /* enables horizontal scroll if needed */
+  min-height: 800px; /* enables vertical scroll naturally */
   background: linear-gradient(120deg, #ffffff, #e9eef4);
   border: 2px dashed #5dade2;
   border-radius: 15px;
   box-shadow: inset 0 0 15px rgba(93,173,226,0.2);
   margin-top: 20px;
   transition: all 0.3s ease;
-  overflow: auto;
   cursor: grab;
+  overflow: auto; /* keeps canvas internal scroll if content overflows */
 }
 
 /* ===== Scrollbar Styling ===== */
